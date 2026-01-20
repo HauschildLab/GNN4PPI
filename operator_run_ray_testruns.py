@@ -84,7 +84,7 @@ def main():
             num_workers=config.config['num_workers']
         )
 
-    else: #default, for KIRC and BRCA pretest configs where not needed (not contained)
+    else: #default, for KIRC pretest configs where not needed (not contained)
         scaling_config = ScalingConfig(
             use_gpu=True, resources_per_worker={"CPU": 31, "GPU": 1},
         )

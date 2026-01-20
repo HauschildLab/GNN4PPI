@@ -97,26 +97,4 @@ if __name__ == "__main__":
                './data/data_splits_KIRC.pt')
     '''
 
-    # BRCA DATASPLIT
-    config = {'number_train_test_splits': 10,  # number of random test train splits (MCCV)
-              'cv_fold_size': 5,  # number of folds (k in k-fold)
-              'cv_fold_size_es_outer': 5,
-              'split_test_fraction': 0.2,  # fraction of test set in MCCV outer split
-              'number_samples': 689,
-              'split_early_stopping_fraction': 0.2,
-              'data_file': './data/brca_graphs_preprocessed_all.pkl'}
-
-    outer_test_idx, inner_test_idx, inner_train_idx, inner_val_idx, outer_val_idx, outer_train_idx = split(config)
-    print(outer_test_idx, inner_test_idx, inner_train_idx, inner_val_idx, outer_val_idx, outer_train_idx)
-    print(outer_test_idx.shape)
-
-    '''
-    torch.save({'outer_test_idx': outer_test_idx,
-                'inner_test_idx': inner_test_idx,
-                'inner_train_idx': inner_train_idx,
-                'inner_val_idx': inner_val_idx,
-                'outer_val_idx': outer_val_idx,
-                'outer_train_idx': outer_train_idx},
-               './data/data_splits_BRCA.pt')
-    '''
 

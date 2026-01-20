@@ -1665,32 +1665,6 @@ def main():
     with open("./data/kirc_random_nodes_preprocessed_all.pkl", "rb") as f:
         graphs_list_test = pickle.load(f)
 
-    coarsening_list_test = torch.load("./coarsening/coarsening_0.pt")
-
-    test_model_step(graphs_list_test, coarsening_list_test)
-
-    '''
-    ##############################################################################
-    print('######################')
-    print('TEST MODELS ON BC SUBTYPE DATA')
-    print('######################')
-
-    with open("./data/bc_subtypes_normalized.pkl", "rb") as f:
-        graphs_list_test = pickle.load(f)
-
-    test_model_step(graphs_list_test)
-
-    ##############################################################################
-    
-    print('######################')
-    print('TEST MODELS ON BC METASTATIC DATA')
-    print('######################')
-
-    with open("./data/bc_metastatic_normalized.pkl", "rb") as f:
-        graphs_list_test = pickle.load(f)
-
-    test_model_step(graphs_list_test)
-    '''
 
     return
 

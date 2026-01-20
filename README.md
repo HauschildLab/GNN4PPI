@@ -37,8 +37,9 @@ Contact: julia.schirmacher@med.uni-goettingen.de, anne-christin.hauschild@uni-gi
 ## Dataset
 The dataset contain patient-specific methylation and gene expression data matched with the universal graph structure 
 from STRING PPI.
-It follows Pfeifer et al. (2022) and Metsch et al. (2024) and is downloaded via 
-http://rshiny.gwdg.de/apps/clarus/datasets.zip . For more details, see the paper.
+It follows Pfeifer et al. (2022) and Metsch et al. (2024). It was downloaded via 
+http://rshiny.gwdg.de/apps/clarus/datasets.zip and stored as *kirc_random_nodes_ui_pytorch.pkl* in the directory
+*data/KIRC_preprocessing/*. It is not contained in the GitHub repository due to file size constraints. 
 The dataset, additional preprocessing/preparation steps as well as the (for reproducibility and fairness) precomputed
 data splits can be found in the directory *data*.
 In addition, the underlying data splitting script can be found under *data_splitting.py*.  The dataset class definition 

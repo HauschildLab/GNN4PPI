@@ -119,5 +119,5 @@ dependencies:
     - wrapt==1.16.0
     - wurlitzer==3.1.1
     - yarl==1.17.1
-prefix: /user/julia.schirmacher/u11510/.conda/envs/gnn-bio
+prefix: /user/{username}/.conda/envs/gnn-bio
 
