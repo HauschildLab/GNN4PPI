@@ -88,23 +88,23 @@ the decision basis for narrowing down the hyperparameter grid for the final runs
 ## License
 This work is licensed under a CC BY-NC 4.0 License.
 
-<img src="CC-BY-NC.png" width="120"/>
+<img src="assets/CC-BY-NC.png" width="120"/>
 
 ## Copyright
 <p style="margin-left:40px;">
-  <img src="GOE_Logo_Quer_IPC_Farbe.png" height="54"/>
+  <img src="assets/GOE_Logo_Quer_IPC_Farbe.png" height="54"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="CIDAS.png" height="56"/>
+  <img src="assets/CIDAS.png" height="56"/>
 </p>
 
 <p style="margin-left:40px;">
-  <img src="UMG_LOGO_2024_Monitor_Farbe_rgb_transparent.png" height="40"/>
+  <img src="assets/UMG_LOGO_2024_Monitor_Farbe_rgb_transparent.png" height="40"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="JLU_logo.png" height="58"/>
+  <img src="assets/JLU_logo.png" height="58"/>
 </p>
 
 ## Acknowledgement
