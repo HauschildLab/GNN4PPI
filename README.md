@@ -35,18 +35,31 @@ Contact: julia.schirmacher@med.uni-goettingen.de, anne-christin.hauschild@uni-gi
 ![Boxplot chart showing test results of Plain, Res and Dense models measured by MCC across full data, methylation data, and expression data with a legend listing models MLP, GCN, GAT, ChebNet, GCN2MLP, GAT2MLP, and ChebNet2MLP and Plain, Res and Dense.](final_results/KIRC/final_box_metric_extended.png)
 
 ## Dataset
-The dataset contain patient-specific methylation and gene expression data matched with the universal graph structure 
+### KIRC Dataset 
+The dataset contains patient-specific methylation and gene expression data matched with the universal graph structure 
 from STRING PPI.
 It follows Pfeifer et al. (2022) and Metsch et al. (2024). It was downloaded via 
 http://rshiny.gwdg.de/apps/clarus/datasets.zip and stored as *kirc_random_nodes_ui_pytorch.pkl* in the directory
 *data/KIRC_preprocessing/*. It is not contained in the GitHub repository due to file size constraints. It is licensed under the GPL-3.0 license.
-The dataset, additional preprocessing/preparation steps as well as the (for reproducibility and fairness) precomputed
+The dataset, additional preprocessing/preparation steps, as well as the (for reproducibility and fairness) precomputed
 data splits can be found in the directory *data*.
-In addition, the underlying data splitting script can be found under *data_splitting.py*.  The dataset class definition 
-can be found in *data.py*.
+
+### BRCA dataset
+The data contain patient-specific methylation and gene expression data matched with the universal graph structure 
+from IID PPI.
+The preprocessing steps are described and implemented in *data/BRCA_preprocessing/*. The required raw datasets and the fully preprocessed dataset are not contained in the GitHub repository due to file size constraints. However, the data can be obtained with the preprocessing steps using the following data:
+
+* Methylation_Firehose.cct: methylation data TCGA BRCA subtypes, downloaded via LinkedOmics: https://www.linkedomics.org/data_download/TCGA-BRCA/ (Methylation Gene level HM450K)
+* BC_SUBTYPES_normalized_rnaseq_data.tsv: preprocessed expression data TCGA BRCA subtypes, provided by Hryhorii Chereda, 
+preprocessed as in "Stable feature selection utilizing Graph Convolutional Neural Network and Layer-wise Relevance Propagation for biomarker discovery in breast cancer", Chereda et al. 2024, 
+and "Ensemble-GNN: federated ensemble learning with graph  neural networks for disease module discovery and  classification", Pfeifer et al. 2023  
+* label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda; the following labels were assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4
+* Human_annotated_PPIs.txt: IID Annotated PPI human, downloaded here: https://iid.ophid.utoronto.ca/ , Version 2025-05
+
+In addition, for both data sets, the underlying data-splitting script is available under *data_splitting.py*.  The dataset class definition can be found in *data.py*.
 
 ## Models
-The examined models are a MLP, GCN, GAT and ChebNet (without additional graph coarsening/pooling), see the paper.
+The examined models are an MLP, GCN, GAT, and ChebNet (without additional graph coarsening/pooling), see the paper.
 Additionally, those have options/additionally defined models for adding residual or dense connections (Res/Dense) and 
 flattening readout ("2MLP") instead of standard global average pooling.
 The models are defined in *gnn_models.py*.
@@ -54,20 +67,19 @@ The models are defined in *gnn_models.py*.
 ## Environment
 To ensure a reproducible setting, a conda environment is used. It can be recreated via the `conda_requirements.txt` or 
 `conda_requirements.yaml`.
-The latter one is the recommended way of set up the used environment.
+The latter one is the recommended way to set up the used environment.
 
 ## Benchmark procedure
-The benchmark is performed on a nested data splitting scheme, including outer splits for model assessment and an inner
+The benchmark is performed on a nested data splitting scheme, including outer splits for model assessment and inner
 splits for model selection. For more details, see the paper.
 This and the whole evaluation setup can be found in *operator_run_ray.py* and *operator_run_ray_testruns.py* (using 
 helper functions defined in *callbacks.py* and *process_results.py*)
-The latter one applies one separate test split for the seek of pretesting aiming in reducing the hyperparamter grid
-(from 5 to 3 choices per hyperparameter). After running this, the narrowed hyperparameter grid can be defined 
-and the final evaluation can be run. Both, the configuration for the pretest and the final configuration for every model
+The latter one applies a separate test split for the sake of pretesting, aiming to reduce the hyperparameter grid
+(from 5 to 3 choices per hyperparameter). After running this, the narrowed hyperparameter grid can be defined, and the final evaluation can be run. Both the configuration for the pretest and the final configuration for every model
 are defined in the directory *configs_pretest* and *configs*.
 
-The whole evaluation is set up to run on GPU nodes on a HPC cluster with slurm and thus, *ray tune* and *ray train* is 
-employed and a sbatch script is included.
+The whole evaluation is set up to run on GPU nodes on an HPC cluster with slurm and thus, *ray tune* and *ray train* are 
+employed, and a sbatch script is included.
 The final evaluation script can be run via *launch_job_ray.py*, which itself uses *job_ray_template.sh*. 
 This can be adapted due to specific architectural choices.
 
@@ -78,7 +90,7 @@ python launch_job_ray.py --exp-name ExperimentName --command "python -u operator
 For the pretests, the procedure is conducted analogously with `operator_run_ray_testruns.py` and `configs_test`.
 
 This produces *result_inner** result files corresponding to the inner splits in the data splitting scheme and 
-*result_outer** for the outer splits, i.e. the final test splits. Several detailed result tables are provided.
+*result_outer** for the outer splits, i.e., the final test splits. Several detailed result tables are provided.
 
 ## Result analysis
 For the result analysis, several jupyter notebooks for visualization and statistical analysis can be found in the
