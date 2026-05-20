@@ -25,7 +25,7 @@ tasks specifically for cancer classification. Models based on multi-omics or met
 models solely incorporating gene expression data for this task. Overall, we suggest using ChebNet as it tends
 to outperform the Graph Convolutional Network and the Graph Attention Network in subtype prediction and
 cancer classification in general. We recommend using GNN architectures that employ a simple flattening
-readout layer as such architectures provide better classification performance and faster training time than
+readout layer, as such architectures provide better classification performance and faster training time than
 those with global average pooling readout. Additionally, we tested residual and skip connections, but they
 had only an insignificant impact on classification performance.
 
@@ -33,6 +33,13 @@ Contact: julia.schirmacher@med.uni-goettingen.de, anne-christin.hauschild@uni-gi
 
 ## Results
 ![Boxplot chart showing test results of Plain, Res and Dense models measured by MCC across full data, methylation data, and expression data with a legend listing models MLP, GCN, GAT, ChebNet, GCN2MLP, GAT2MLP, and ChebNet2MLP and Plain, Res and Dense.](final_results/KIRC/final_box_metric_extended.png)
+**KIRC data:** The MCC result distribution of all models on all data sets.
+The results of all 50 outer runs (10 test sets with 5-fold cross-validation each) are depicted as box plots.
+
+![Boxplot chart showing test results of Plain, Res and Dense models measured by MCC across full data, methylation data, and expression data with a legend listing models MLP, GCN, GAT, ChebNet, GCN2MLP, GAT2MLP, and ChebNet2MLP and Plain, Res and Dense.](final_results/BRCA/final_box_metric_extended.png)
+**BRCA data:** The MCC result distribution of all models on all data sets.
+The results of all 50 outer runs (10 test sets with 5-fold cross-validation each) are depicted as box plots.
+
 
 ## Dataset
 ### KIRC Dataset 
@@ -53,7 +60,7 @@ The preprocessing steps are described and implemented in *data/BRCA_preprocessin
 * BC_SUBTYPES_normalized_rnaseq_data.tsv: preprocessed expression data TCGA BRCA subtypes, provided by Hryhorii Chereda, 
 preprocessed as in "Stable feature selection utilizing Graph Convolutional Neural Network and Layer-wise Relevance Propagation for biomarker discovery in breast cancer", Chereda et al. 2024, 
 and "Ensemble-GNN: federated ensemble learning with graph  neural networks for disease module discovery and  classification", Pfeifer et al. 2023  
-* label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda (with the following labels assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4
+* label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda (with the following labels assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4)
 * Human_annotated_PPIs.txt: IID Annotated PPI human, downloaded here: https://iid.ophid.utoronto.ca/ , Version 2025-05
 
 In addition, for both data sets, the underlying data-splitting script is available under *data_splitting.py*.  The dataset class definition can be found in *data.py*.
@@ -94,8 +101,7 @@ This produces *result_inner** result files corresponding to the inner splits in 
 
 ## Result analysis
 For the result analysis, several jupyter notebooks for visualization and statistical analysis can be found in the
-directory *evaluation*. *Pretest_figures_KIRC.ipynb* is used for the result analyses of the pretest results. These built
-the decision basis for narrowing down the hyperparameter grid for the final runs. 
+directory *evaluation*. *Pretest_figures_KIRC.ipynb* and *Pretest_figures_BRCA.ipynb* are used for the result analyses of the pretest results. These built the decision basis for narrowing down the hyperparameter grid for the final runs. 
 
 ## License
 This work is licensed under a CC BY-NC 4.0 License.
