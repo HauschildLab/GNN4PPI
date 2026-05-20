@@ -58,8 +58,7 @@ The preprocessing steps are described and implemented in *data/BRCA_preprocessin
 
 * Methylation_Firehose.cct: methylation data TCGA BRCA subtypes, downloaded via LinkedOmics: https://www.linkedomics.org/data_download/TCGA-BRCA/ (Methylation Gene level HM450K)
 * BC_SUBTYPES_normalized_rnaseq_data.tsv: preprocessed expression data TCGA BRCA subtypes, provided by Hryhorii Chereda, 
-preprocessed as in "Stable feature selection utilizing Graph Convolutional Neural Network and Layer-wise Relevance Propagation for biomarker discovery in breast cancer", Chereda et al. 2024, 
-and "Ensemble-GNN: federated ensemble learning with graph  neural networks for disease module discovery and  classification", Pfeifer et al. 2023  
+preprocessed as in "Stable feature selection utilizing Graph Convolutional Neural Network and Layer-wise Relevance Propagation for biomarker discovery in breast cancer", Chereda et al. 2024
 * label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda (with the following labels assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4)
 * Human_annotated_PPIs.txt: IID Annotated PPI human, downloaded here: https://iid.ophid.utoronto.ca/ , Version 2025-05
 
