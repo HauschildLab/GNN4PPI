@@ -53,7 +53,7 @@ The preprocessing steps are described and implemented in *data/BRCA_preprocessin
 * BC_SUBTYPES_normalized_rnaseq_data.tsv: preprocessed expression data TCGA BRCA subtypes, provided by Hryhorii Chereda, 
 preprocessed as in "Stable feature selection utilizing Graph Convolutional Neural Network and Layer-wise Relevance Propagation for biomarker discovery in breast cancer", Chereda et al. 2024, 
 and "Ensemble-GNN: federated ensemble learning with graph  neural networks for disease module discovery and  classification", Pfeifer et al. 2023  
-* label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda; the following labels were assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4
+* label_info.txt: patient labels corresponding to the TCA BRCA subtype expression data above, provided by Hryhorii Chereda (with the following labels assigned: luminal A - 2, luminal B - 3, basal-like - 0, HER2-enriched - 1, normal-like - 4
 * Human_annotated_PPIs.txt: IID Annotated PPI human, downloaded here: https://iid.ophid.utoronto.ca/ , Version 2025-05
 
 In addition, for both data sets, the underlying data-splitting script is available under *data_splitting.py*.  The dataset class definition can be found in *data.py*.
