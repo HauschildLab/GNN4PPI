@@ -14,20 +14,20 @@ as the integration of prior knowledge and deep neural networks has the potential
 molecular processes and disease mechanisms. However, a comprehensive and systematic assessment of model
 architectures, data modalities, graph structures, and their performance for graph signal classification in the
 biomedical domain is yet to be performed. In order to close this gap, we conducted a benchmarking study on
-multiple GNNs on a Protein-Protein Interaction (PPI) network for cancer prediction, performing an in-depth
-investigation of architectures, incorporating skip connections and various data modalities.
+multiple GNNs on a Protein-Protein Interaction (PPI) network for Kidney Renal Clear Cell Carcinoma and
+Breast cancer subtype prediction, performing an in-depth investigation of architectures, incorporating skip
+connections and various data modalities.
 
 
-**Results:** While none of the GNNs outperforms the structure-agnostic Multi-Layer Perceptron baseline,
-all of them can handle bimodal data (gene methylation and expression) and offer the ability to gain
-explainability based on PPIs. We offer practical guidelines for applying GNNs to graph signal processing
-tasks specifically for cancer classification. Models based on multi-omics or methylation data outperform
-models solely incorporating gene expression data for this task. Overall, we suggest using ChebNet as it tends
-to outperform the Graph Convolutional Network and the Graph Attention Network in subtype prediction and
-cancer classification in general. We recommend using GNN architectures that employ a simple flattening
-readout layer, as such architectures provide better classification performance and faster training time than
-those with global average pooling readout. Additionally, we tested residual and skip connections, but they
-had only an insignificant impact on classification performance.
+**Results:** While none of the GNNs outperforms the structure-agnostic Multi-Layer Perceptron baseline, all of
+them can handle bimodal data (gene methylation and expression) and offer the ability to gain explainability
+based on PPIs. We offer practical guidelines for applying GNNs to graph signal processing tasks specifically for
+cancer classification. Depending on the underlying dataset and PPI structure employed, models on different
+data modalities outperform others. Overall, we suggest using ChebNet, which tends to outperform the Graph
+Convolutional Network and the Graph Attention Network in cancer subtype prediction. We recommend
+using GNN architectures that employ a simple flattening readout layer, as they provide better classification
+performance and faster training time than those with global average pooling. Additionally, we tested residual
+connections, but they had only an insignificant impact on classification performance.
 
 Contact: julia.schirmacher@med.uni-goettingen.de, anne-christin.hauschild@uni-gießen.de
 
